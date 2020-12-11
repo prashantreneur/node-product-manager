@@ -1,0 +1,31 @@
+<%- include('partials/meta.ejs') %>
+<title>Add a new Product</title>
+</head>
+
+<body>
+    <h1 class="bg-info p-5 text-center mb-5">Add a new Product</h1>
+    <form action="/products" method="POST" class="container">
+        <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" name="name" id="name" class="form-control" autocomplete="off" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price(unit)</label>
+            <input type="number" name="price" id="price" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Select category</label>
+            <select name="category" id="category" class="form-control" required>
+                <option value="fruits">Fruits</option>
+                <option value="vegetable">Vegetable</option>
+                <option value="dairy">Dairy</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+        <a href="/products" class="btn btn-danger">Cancel</a>
+
+    </form>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

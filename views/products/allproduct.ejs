@@ -1,0 +1,29 @@
+<%- include('partials/meta.ejs') %>
+
+<title>All Products</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <div class="bg-dark p-5 mb-5">
+                <h1 class="text-center text-white">All Products</h1>
+            </div>
+            <div class="list-group container px-3 mb-5">
+                <ul class="list-unstyled">
+                    <% for(let p of getProduct) {%>
+                    <li><a href="/products/<%=`${p.id}` %> "
+                            class="list-group-item list-group-item-action"><%= p.name %></a>
+                    </li>
+                    <% } %>
+                </ul>
+                <a href="/products/new" class="list-group-item list-group-item-action w-25 text-center bg-warning">New
+                    Product</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+<%- include('partials/footer.ejs') %>
+
+</html>

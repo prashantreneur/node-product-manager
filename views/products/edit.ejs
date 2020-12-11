@@ -1,0 +1,32 @@
+<%- include('partials/meta.ejs') %>
+<title>Edit</title>
+</head>
+
+<body>
+    <h1 class="text-center bg-info p-5 mb-5">Edit the Product</h1>
+    <form action="/products/<%=product.id%>?_method=PUT" method="POST" class="container">
+        <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" name="name" id="name" value="<%= product.name %>" class="form-control"
+                autocomplete="off">
+        </div>
+        <div class=" form-group">
+            <label for="price">Price(unit)</label>
+            <input type="number" name="price" id="price" value=<%= product.price %> class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="category">Select category</label>
+            <select name="category" id="category" class="form-control">
+                <option value="fruits" <%= product.category === 'fruits' ? 'selected' : '' %>>Fruits</option>
+                <option value="vegetable" <%= product.category === 'vegetable' ? 'selected' : '' %>>Vegetable</option>
+                <option value="dairy" <%= product.category === 'dairy' ? 'selected' : '' %>>Dairy</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="/products/<%=product._id%>" class="btn btn-danger">Cancel</a>
+    </form>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

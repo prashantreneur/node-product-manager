@@ -1,0 +1,28 @@
+<%- include('partials/meta.ejs') %>
+<title>View Product</title>
+</head>
+
+<body>
+    <h1 class="bg-dark text-center p-5 mb-5 text-white">View Product</h1>
+    <div class="container text-center w-50">
+        <div class="card ">
+            <div class="card-header">
+                <h3> <%= idProduct.name %></h3>
+            </div>
+            <div class="card-body">
+                <h5 class="card-text">Price :- <%= idProduct.price %></h5>
+                <h5 class="card-text mb-3">Category :- <%= idProduct.category %></h5>
+                <form action="/products/<%=idProduct.id%>?_method=DELETE" method="POST" class="d-inline">
+                    <button class="btn btn-primary">DELETE</button>
+                </form>
+                <a href="/products/<%=idProduct.id%>/edit " class="btn btn-primary">Edit</a>
+            </div>
+        </div>
+        <a href="/products" class="btn btn-warning mt-2">All Products</a>
+    </div>
+    <%- include('partials/footer.ejs') %>
+
+
+</body>
+
+</html>
